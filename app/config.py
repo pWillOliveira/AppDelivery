@@ -1,0 +1,5 @@
+MYSQL_HOST = "localhost"
+MYSQL_USER = "william"
+MYSQL_PASSWORD = "Wpo131201!"
+MYSQL_DB = "appdelivery"
+SESSION_KEY = "Ox.$5+wo2=i[02+)Szlty(adx71inWN+Z-S575jOU[MvqGv#7e"

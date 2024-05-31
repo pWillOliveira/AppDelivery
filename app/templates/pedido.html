@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/pedido.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/icon.png">
+    <title>Pizzaria - Seu Pedido</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark">
+            <a class="navbar-brand" href="/home">
+                <img id="logo" src="../static/img/logo.png" class="d-inline-block align-center" alt="">
+                Pizzaria
+            </a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" target="_blank"><img id="navicon"
+                            src="../static/img/whatsapp.gif"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" target="_blank"><img id="navicon"
+                            src="../static/img/instagram.gif"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" target="_blank"><img id="navicon"
+                            src="../static/img/facebook.gif"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            {% set total_carrinho = models.calcular_total_carrinho() %}
+            {% if session.get('cart') or session.get('meioameio') %}
+            <div class="head-container">Número do Pedido: {{ numero_pedido }}</div>
+            <div class="carrinho-conteudo fechado" id="carrinhoConteudo">
+                <table class="table table-sm">
+                    <thead>
+                        <th>Itens</th>
+                        <th>Preço</th>
+                        <th class="text-center"></th>
+                    </thead>
+                    <tbody>
+                        {% for produto_id in session['cart'] %}
+                        {% set produto = models.buscar_produto(produto_id) %}
+                        <tr id="produto_cart">
+                            <td class="text-start">{{ produto[1] }}</td>
+                            <td>R$ {{ '%.2f' % produto[2] }}</td>
+                            <form action="{{ url_for('routes.remover_pedido', produto_id=produto[0]) }}" method="post">
+                                <td class="text-center"><button class="btn btn-danger btn-sm"
+                                        style="background-color: darkred;"><i class="bi bi-trash"></i></button></td>
+                            </form>
+                        </tr>
+                        {% endfor %}
+
+                        {% for meioameio in session['meioameio'] %}
+                        {% set id_pizza1 = meioameio[0] %}
+                        {% set id_pizza2 = meioameio[1] %}
+                        {% set meio_a_meio = models.buscar_meioameio(id_pizza1, id_pizza2) %}
+                        <tr id="produto_cart">
+                            <td class="text-start">
+                                {{ meio_a_meio[0] }}
+                            </td>
+                            <td>R$ {{ "%.2f" % meio_a_meio[1] }}</td>
+                            <form action="{{ url_for('routes.remover_pmeioameio', index=loop.index0) }}" method="post">
+                                <td class="text-center">
+                                    <button type="submit" class="btn btn-danger btn-sm"
+                                        style="background-color: darkred;"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </form>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <table class="table-borderless table-sm">
+                    <thead>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Total do Pedido:</strong> R$ {{ '%.2f' % total_carrinho }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="text-center">Seu carrinho está vazio. <img src="..//static/img/sad.gif" id="emoji">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if session.get('cart') or session.get('meioameio') %}
+        <form id="formPedido" action="{{ url_for('routes.pedido') }}" method="post">
+            <div class="container">
+                <div class="head-container">Informações de Entrega:</div>
+
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Nome:</span>
+                    <input type="text" class="form-control" maxlength="60" name="nomeCliente"
+                        placeholder="Informe quem receberá o pedido" required>
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Telefone:</span>
+                    <input type="tel" id="telefoneInput" class="form-control" name="telCliente"
+                        placeholder="Informe telefone para contato com DDD" maxlength="15" required>
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Endereço:</span>
+                    <input type="text" class="form-control" maxlength="100" name="enderecoCliente"
+                        placeholder="Informe o endereço de entrega" required>
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Número:</span>
+                    <input type="text" class="form-control" id="numero" maxlength="6" name="numeroCliente"
+                        placeholder="Informe o número do endereço" required>
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Bairro:</span>
+                    <input type="text" class="form-control" maxlength="60" name="bairroCliente"
+                        placeholder="Informe o bairro" required>
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Complemento:</span>
+                    <input type="text" class="form-control" maxlength="250" name="compCliente"
+                        placeholder="Informe o complemento do endereço">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <span class="input-group-text" maxlength="250" id="inputGroup-sizing-sm">Ponto de Referência</span>
+                    <textarea class="form-control" name="refCliente"
+                        placeholder="Informe um ponto de referência"></textarea>
+                </div>
+
+                <div class="container-pag">
+                    <div class="head-container">Forma de Pagamento:</div>
+                    {% set pagamentos = models.listar_pagamentos() %}
+                    {% for pagamento in pagamentos %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="idPagamento" value="{{ pagamento[0] }}"
+                            required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            {{ pagamento[1] }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <table class="table-borderless table-sm">
+                    <thead>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="text-center">
+                                    <button class="btn btn-primary btn-sm" id="btn-nvalida">Continuar
+                                        Comprando</button>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="text-center"><button type="submit" id="btn-pedido"
+                                        class="btn btn-primary btn-sm">Efetuar
+                                        Pedido</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        {% else %}
+        <div class="container">
+            <div class="text-center"><a href="/home"><button type="submit" class="btn btn-primary btn-sm"
+                        id="btn-nvalida">Retornar
+                        ao Início</button></a>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <script>function validarNumero(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }</script>
+    <script src="../static/pedido-script.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

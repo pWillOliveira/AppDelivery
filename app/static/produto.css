@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html {
+    font-family: Ubuntu, Arial;
+    background-color: black;
+}
+
+body {
+    font-family: Ubuntu, Arial;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+header {
+    background: linear-gradient(120deg, navy, purple);
+    font-size: 16px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#navicon {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+}
+
+#btn-menu {
+    width: 82px;
+    font-size: 11px;
+}
+
+.row {
+    margin: 0;
+    max-width: 100%;
+}
+
+#dropdownMenuButton {
+    width: 82px;
+    font-size: 11px;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.head {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn {
+    font-size: 12px;
+}
+
+.btncadastrar {
+    text-align: right;
+}
+
+.info {
+    color: #aaa;
+}
+
+.flashes {
+    font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+    /* Para navegadores baseados em Webkit como Chrome e Safari */
+    font-size: 11px;
+}
+
+:-moz-placeholder {
+    /* Para navegadores baseados em Firefox */
+    font-size: 11px;
+}
+
+::-moz-placeholder {
+    /* Para navegadores baseados em Firefox */
+    font-size: 11px;
+}
+
+:-ms-input-placeholder {
+    /* Para navegadores baseados em Internet Explorer e Edge */
+    font-size: 11px;
+}
+
+#inputGroup-sizing-sm {
+    font-size: 11px;
+}
+
+.input-group-sm>.form-control,
+.input-group-sm>.form-select,
+.input-group-sm>.input-group-text,
+.input-group-sm>.btn {
+    font-size: 11px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+}

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+html {
+    background-color: black;
+}
+
+body {
+    background-image: url('../static/img/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Chelsea Market, Arial;
+    font-size: 10px;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.navbar {
+    background: linear-gradient(120deg, navy, purple);
+    padding: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.navbar-brand {
+    font-size: 16px;
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#navicon {
+    width: 30px;
+    border-radius: 10px;
+}
+
+.nav-item a {
+    padding: 8px;
+}
+
+.head {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.table .table-sm {
+    margin-top: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    border-color: #666;
+}
+
+.info {
+    padding: 0;
+    margin: 0;
+    color: #666;
+}
+
+.btn {
+    background: navy;
+    border: 1px solid black
+}
+
+.table-borderless {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#emoji {
+    width: 32px;
+    height: 32px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.container-pag {
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+    /* Para navegadores baseados em Webkit como Chrome e Safari */
+    font-size: 11px;
+}
+
+:-moz-placeholder {
+    /* Para navegadores baseados em Firefox */
+    font-size: 11px;
+}
+
+::-moz-placeholder {
+    /* Para navegadores baseados em Firefox */
+    font-size: 11px;
+}
+
+:-ms-input-placeholder {
+    /* Para navegadores baseados em Internet Explorer e Edge */
+    font-size: 11px;
+}
+
+#inputGroup-sizing-sm {
+    font-size: 11px;
+}
+
+.input-group-sm>.form-control,
+.input-group-sm>.form-select,
+.input-group-sm>.input-group-text,
+.input-group-sm>.btn {
+    font-size: 11px;
+}
+
+.head-container {
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+#btn-pedido {
+    background: linear-gradient(120deg, navy, purple);
+    font-size: 11px;
+    width: 150px;
+}
+
+#btn-nvalida {
+    background: linear-gradient(120deg, navy, purple);
+    font-size: 11px;
+    width: 150px;
+}

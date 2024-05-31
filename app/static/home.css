@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+html {
+    background-color: black;
+}
+
+body {
+    background-image: url('../static/img/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Chelsea Market, Arial;
+    font-size: 12px;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 200px;
+}
+
+.navbar {
+    background: linear-gradient(120deg, navy, purple);
+    padding: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.navbar-brand {
+    font-size: 16px;
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#navicon {
+    width: 30px;
+    border-radius: 10px;
+}
+
+.nav-item a {
+    padding: 8px;
+}
+
+.head {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.accordion-button {
+    font-weight: bold;
+}
+
+.accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    border-color: #666;
+}
+
+.info {
+    padding: 0;
+    margin: 0;
+    color: #666;
+    font-size: 11px;
+}
+
+.container {
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    align-items: middle;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid navy;
+    position: fixed;
+    max-width: 900px;
+    bottom: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+
+}
+
+.carrinho-conteudo {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.container.expandido {
+    max-height: 600px;
+}
+
+.btn {
+    background: navy;
+    border: 1px solid black
+}
+
+.table-borderless {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fechado {
+    display: none;
+}
+
+#emoji {
+    width: 32px;
+    height: 32px;
+}
+
+#btn-finalizar {
+    background: linear-gradient(120deg, navy, purple);
+    font-size: 11px;
+    width: 150px;
+}
+
+.container-head {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

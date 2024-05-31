@@ -1,0 +1,32 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Center - Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1>Login</h1>
+        <form method="post">
+            <div class="txt_field">
+                <input type="text" name="login" required>
+                <span></span>
+                <label>Usuário</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="senha" required>
+                <span></span>
+                <label>Senha</label>
+            </div>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+</body>
+
+</html>
