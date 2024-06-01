@@ -95,10 +95,19 @@ CREATE TABLE `appdelivery`.`num_ped` (
   `PEDIDO` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`PEDIDO`));
 ```
+<br>
+Para acessar o painel de administração, insira um usuário na tabela de usuário utilizando uma senha em formato de SHA256 que pode ser gerada <a href="https://tools.keycdn.com/sha256-online-generator">aqui</a>, a query deve ficar mais ou menos dessa maneira:
+<br><br>
 
+```sql
+INSERT INTO USUARIOS VALUES (1,'Administrador','admin','','46070d4bf934fb0d4b06d9e2c46e346944e322444900a435d7d9a95e6d7435f5');
+```
+
+Na query acima o SHA256 do campo SENHA refere-se a senha "teste".
 </details>
 <br>
 <strong>Fontes, imagens e icones:</strong>
+<br><br>
 <ul>
     <li>Fontes Ubuntu e Chelsea Market retirada do <a href="https://fonts.google.com">Google Fonts</a></li>
     <li>Icones de rede sociais e outras imagens retiradas de <a href="https://icons8.com.br/icons">Icons 8</a></li>
