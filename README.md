@@ -16,7 +16,7 @@ A aplicação possui painel para cadastro de produtos, categorias, formas de pag
 <br><br>
 Será necessário criar um arquivo <em>config.py</em> na raiz do projeto com as informações de autenticação do MySQL e definir uma chave de sessão para ser utilizada pelo Flask da seguinte maneira:
 <br><br>
-```python
+```
 MYSQL_HOST = "Endereço do MySQL"
 MYSQL_USER = "Usuário de acesso"
 MYSQL_PASSWORD = "Senha de acesso"
