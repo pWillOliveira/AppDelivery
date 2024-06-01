@@ -1,4 +1,4 @@
-<h1>Aplicativo - Delivery Pizzaria</h1>
+<h1>App - Delivery Pizzaria</h1>
 
 Aplicativo desenvolvido para delivery de pedidos de uma pizzaria, podendo ser adaptado para delivery de qualquer outro tipo realizando pequenas adaptações.
 <br><br>
@@ -9,6 +9,7 @@ A aplicação possui painel para cadastro de produtos, categorias, formas de pag
     <li>Python - Versão 3.11.9</li>
     <li>Framework Flask - Versão 3.0.3</li>
     <li>MySQL Server 8.0 Community + Workbench</li>
+    <li>Bootstrap - Versão 5.2.3</li>
     <li>HTML, CSS e Javascript</li>
 </ul>
 <br>
@@ -18,13 +19,11 @@ Será necessário criar um arquivo <em>config.py</em> na raiz do projeto com as 
 <br><br>
 
 ```python
-    
 MYSQL_HOST = "Endereço do MySQL"
 MYSQL_USER = "Usuário de acesso"
 MYSQL_PASSWORD = "Senha de acesso"
 MYSQL_DB = "Nome do banco de dados"
 SESSION_KEY = "Defina a chave aqui, eu defini uma do tipo SHA256"
-
 ```
 
 <br>
@@ -37,7 +36,6 @@ Para o funcionamento da aplicação é necessário modelar a base de dados da se
     <summary>Query:</summary>
 
 ```sql
-
 CREATE TABLE `appdelivery`.`categorias` (
   `ID` INT NOT NULL,
   `NOME` VARCHAR(30),	
@@ -96,7 +94,13 @@ CREATE TABLE `appdelivery`.`meio_a_meio` (
 CREATE TABLE `appdelivery`.`num_ped` (
   `PEDIDO` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`PEDIDO`));
-
 ```
 
 </details>
+<br>
+<strong>Fontes, imagens e icones:</strong>
+<ul>
+    <li>Fontes Ubuntu e Chelsea Market retirada do <a href="https://fonts.google.com">Google Fonts</a></li>
+    <li>Icones de rede sociais e outras imagens retiradas de <a href="https://icons8.com.br/icons">Icons 8</a></li>
+    <li>O background do app foi retirado do <a href="https://br.pinterest.com">Pinterest</a> e logotipo do <a href="https://www.gratispng.com">Grátis PNG</a></li>
+</ul>
