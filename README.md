@@ -13,6 +13,8 @@ A aplicação possui painel para cadastro de produtos, categorias, formas de pag
     <li>HTML, CSS e Javascript</li>
 </ul>
 <br>
+<a href="https://youtu.be/KPCygo20WzM">Link</a> de vídeo mostrando o funcionamento do projeto.
+<br><br>
 <strong>Inicializando a aplicação:</strong>
 <br><br>
 Será necessário criar um arquivo <em>config.py</em> na raiz do projeto com as informações de autenticação do MySQL e definir uma chave de sessão para ser utilizada pelo Flask da seguinte maneira:
